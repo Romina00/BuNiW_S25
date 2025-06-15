@@ -1,138 +1,101 @@
-aside, header, footer, main, nav, section,
-article, hr,
-div, noscript,
-h1, h2, h3, h4, h5, h6, p,
-pre,
-address,
-form, fieldset,
-figcaption, figure, picture,
-iframe, video, audio,
-table, thead, tbody, tfoot {
-  margin: 0;
-  padding: 0;
-  border: none;
-  vertical-align: baseline;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-code,
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, main, nav, section, search {
-  display: block;
-}
-
-span,
-abbr, dfn,
-em, strong, mark,
-del, s, ins,
-cite, q, sub, sup,
-p code, li code, dl code, h1 code, h2 code, h3 code, h4 code, h5 code, h6 code kbd,
-samp,
-var,
-time,
-label, select, textarea, progress,
-data,
-object {
-  font-style: normal;
-  display: inline-block;
-  position: relative;
-}
-
-a, button {
-  font-style: normal;
-  position: relative;
-}
-
-button {
-  display: inline-block;
-}
-
-ul:not([class]), ol:not([class]) {
-  margin-block-start: 16px;
-  margin-block-end: 16px;
-}
-
-@font-face {
-  font-family: "sans-serif-copy";
-  src: local("Atkinson Hyperlegible Next"), local("Atkinson_Hyperlegible_Next"), url("fonts/Atkinson_Hyperlegible_Next/AtkinsonHyperlegibleNext-Regular.woff2") format("woff2");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-}
-html {
-  font-size: 100%;
-  font-family: sans-serif-copy, sans-serif;
-  line-height: 1.5;
-}
-html[lang*=simple] {
-  font-size: 120%;
-}
-
 body {
-  font-size: 1rem;
-  max-width: 45rem;
-  margin: 0 auto;
-  padding: 0;
-}
-body > * {
-  background-color: darkolivegreen;
-}
-
-p {
-  margin: 0 0 1rem;
+  background-color: #0d1b2a;
+  color: #e0e1dd;
+  font-size: 1.125rem;
+  font-family: sans-serif-copy, sans-serif;
+  line-height: 1.75;
+  padding: 0 1rem;
+  margin: 0;
 }
 
+header {
+  background-color: #1b263b;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav {
+  background-color: #1b263b;
+  position: relative;
+}
+nav .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #e0e1dd;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
 nav ul {
-  list-style: "";
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
 }
-nav ul li {
-  padding: 0 16px;
-}
-
-main {
-  padding: 0 16px;
-}
-
-dt, dd {
-  display: inline-block;
-}
-
-li:nth-child(even) {
-  background: yellowgreen;
-}
-
-h1 {
-  padding-inline-start: 32px;
-}
-
-.monospace {
-  font-family: monospace;
-}
-
-.sans-serif {
-  font-family: sans-serif;
-}
-
-.serif {
-  font-family: serif;
-}
-
-.fantasy {
-  font-family: fantasy;
-}
-
-a[aria-current] {
+nav ul li a {
+  color: #e0e1dd;
   text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+nav ul li a:hover, nav ul li a:focus {
+  background-color: #415a77;
+  color: #778da9;
+  outline: 2px solid #778da9;
+  outline-offset: 2px;
+}
+nav ul li a[aria-current=page] {
+  border-bottom: 2px solid #778da9;
 }
 
-a[target=_blank], a[download] {
-  color: red;
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #1b263b;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+  }
+  nav ul li {
+    text-align: center;
+    border-top: 1px solid #415a77;
+  }
+  nav.nav-open ul {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+  }
 }
+main {
+  padding: 2rem 1rem;
+  max-width: 45rem;
+  margin: 0 auto;
+  background-color: #0d1b2a;
+}
+
+h1, h2, h3 {
+  color: #778da9;
+}
+
+a {
+  color: #778da9;
+  text-decoration: underline;
+}
+a:hover, a:focus {
+  color: #e0e1dd;
+  background-color: #415a77;
+  outline: 2px solid #e0e1dd;
+  outline-offset: 2px;
+}
+
+/*# sourceMappingURL=styles.css.map */

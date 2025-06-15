@@ -1,0 +1,134 @@
+// --------------------------------------------
+// Color Palette Variables
+// --------------------------------------------
+$color-darkest: #0d1b2a;
+$color-dark: #1b263b;
+$color-mid: #415a77;
+$color-light: #778da9;
+$color-lighter: #e0e1dd;
+
+$font-body: sans-serif-copy, sans-serif;
+
+// --------------------------------------------
+// Base Styling
+// --------------------------------------------
+body {
+  background-color: $color-darkest;
+  color: $color-lighter;
+  font-size: 1.125rem;
+  font-family: $font-body;
+  line-height: 1.75;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+// --------------------------------------------
+// Header + Navigation
+// --------------------------------------------
+header {
+  background-color: $color-dark;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+nav {
+  background-color: $color-dark;
+  position: relative;
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $color-lighter;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+
+    li a {
+      color: $color-lighter;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+
+      &:hover,
+      &:focus {
+        background-color: $color-mid;
+        color: $color-light;
+        outline: 2px solid $color-light;
+        outline-offset: 2px;
+      }
+
+      &[aria-current="page"] {
+        border-bottom: 2px solid $color-light;
+      }
+    }
+  }
+}
+
+// --------------------------------------------
+// Responsive Navigation (Hamburger)
+// --------------------------------------------
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: $color-dark;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+
+    li {
+      text-align: center;
+      border-top: 1px solid $color-mid;
+    }
+  }
+
+  nav.nav-open ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+// --------------------------------------------
+// Main, Typography, and Layout
+// --------------------------------------------
+main {
+  padding: 2rem 1rem;
+  max-width: 45rem;
+  margin: 0 auto;
+  background-color: $color-darkest;
+}
+
+h1, h2, h3 {
+  color: $color-light;
+}
+
+a {
+  color: $color-light;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    color: $color-lighter;
+    background-color: $color-mid;
+    outline: 2px solid $color-lighter;
+    outline-offset: 2px;
+  }
+}

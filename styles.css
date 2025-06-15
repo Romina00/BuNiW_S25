@@ -46,12 +46,12 @@ nav ul li a {
 }
 nav ul li a:hover, nav ul li a:focus {
   background-color: #415a77;
-  color: #778da9;
-  outline: 2px solid #778da9;
+  color: #ffffff;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 nav ul li a[aria-current=page] {
-  border-bottom: 2px solid #778da9;
+  border-bottom: 2px solid #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -84,11 +84,12 @@ main {
 }
 
 h1, h2, h3 {
-  color: #778da9;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 a {
-  color: #778da9;
+  color: #ffffff;
   text-decoration: underline;
 }
 a:hover, a:focus {

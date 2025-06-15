@@ -77,13 +77,20 @@
 
       <p>Logo + Name der Seite</p>
       <nav>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle menu"
+          onclick="document.querySelector('nav').classList.toggle('nav-open')"
+        >
+          ☰
+        </button>
         <ul>
-          <li><a href="index.html" aria-current="page">Startseite</a></li>
-          <li><a href="ueber-uns.html">Über uns</a></li>
-          <li><a href="historie.html">Historie</a></li>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="ueber-uns.html">About Me</a></li>
+          <li><a href="historie.html">History</a></li>
           <li><a href="jobs.html">Jobs</a></li>
           <li><a href="blog.html">Blog</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
+          <li><a href="kontakt.html">Contact</a></li>
         </ul>
       </nav>
     </header>

@@ -4,7 +4,7 @@
 $color-darkest: #0d1b2a;
 $color-dark: #1b263b;
 $color-mid: #415a77;
-$color-light: #778da9;
+$color-light: #ffffff;
 $color-lighter: #e0e1dd;
 
 $font-body: sans-serif-copy, sans-serif;
@@ -118,6 +118,7 @@ main {
 
 h1, h2, h3 {
   color: $color-light;
+  font-weight: bold;
 }
 
 a {

@@ -1,0 +1,60 @@
+.projects {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.projects h1 {
+  font-size: 2.5rem;
+  color: var(--color-light);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.projects .project {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background-color: var(--color-dark);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+.projects .project:hover {
+  transform: translateY(-5px);
+}
+.projects .project h2 {
+  font-size: 1.75rem;
+  color: var(--color-light);
+  margin-bottom: 1rem;
+}
+.projects .project p {
+  margin-bottom: 1rem;
+  color: var(--color-lighter);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.projects .project .project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.projects .project .project-images img {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  aspect-ratio: 3/2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+.projects .project .project-images img:hover {
+  transform: scale(1.03);
+}
+@media (max-width: 768px) {
+  .projects .project {
+    padding: 1rem;
+  }
+  .projects h1 {
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

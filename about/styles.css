@@ -1,0 +1,42 @@
+.cv {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.cv .intro {
+  margin-bottom: 2rem;
+}
+.cv .intro h1 {
+  color: var(--color-light);
+  margin-bottom: 0.75rem;
+}
+.cv .intro p {
+  margin-bottom: 1rem;
+}
+.cv .cv-columns {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.cv .cv-columns .skills,
+.cv .cv-columns .education {
+  flex: 1;
+}
+.cv .skills ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+.cv .education .edu-entry h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-light);
+}
+.cv .education .edu-entry p {
+  margin: 0.5rem 0;
+}
+@media (max-width: 768px) {
+  .cv .cv-columns {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

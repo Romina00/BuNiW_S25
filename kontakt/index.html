@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-DE">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="./../styles.css" media="all" />
+    <link rel="stylesheet" href="styles.css" media="all" />
+
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="description" content="Description of the page as shown in search results. Should not exceed ~150 characters. Umlauts work!" />
+    <link rel="canonical" href="https://www.example.de/originalseite" />
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no, url=no" />
+
+    <link rel="icon" id="favicon-svg" type="image/svg+xml" href="favicon.svg" />
+    <link rel="mask-icon" id="mask-icon-svg" href="mask-icon.svg" />
+    <link rel="apple-touch-icon" id="apple-touch-icon-png" href="apple-touch-icon.png" />
+
+    <meta property="og:title" content="Title for Social Media" />
+    <meta property="og:description" content="Description for social media" />
+    <meta property="og:url" content="https://domain.de/folder/page" />
+    <meta property="og:image" content="https://domain.de/images/social-share-image.png" />
+    <meta property="og:image:alt" content="Image description goes here!" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+    <meta property="og:site_name" content="Site Name" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:description" content="see og:description" />
+    <meta name="twitter:title" content="see og:title" />
+    <meta name="twitter:image" content="https://domain.de/images/social-share-image.png" />
+    <meta name="twitter:image:alt" content="see og:image:alt" />
+  </head>
+  <body>
+      <header>
+        <nav>
+          <div class="nav-bar">
+            <span class="logo">Romina Mirmehdi</span>
+            <label class="theme-switch">
+              <input type="checkbox" id="theme-toggle" />
+              <span class="slider"></span>
+            </label>
+                      </div>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle menu"
+            onclick="document.querySelector('nav').classList.toggle('nav-open')"
+          >
+            ☰
+          </button>
+          <ul>
+            <li><a href="../index.html" >Home</a></li>
+            <li><a href="../about/index.html">About Me</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="index.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <main id="inhalt" class="contact">
+        <h1>Contact Me</h1>
+        <form action="https://formspree.io/f/mwpbbgqn" method="POST">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required />
+      
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="_replyto" required />
+      
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+      
+          <button type="submit">Send Message</button>
+        </form>
+      </main>
+      
+      <footer class="footer">
+        <div class="footer-content">
+          <h2>Let's Work Together!</h2>
+          <p>I’m open to collaborations, freelance work, or just a friendly chat.</p>
+          <p>Reach out to me anytime, I'd love to hear from you.</p>
+      
+          <div class="footer-links">
+            <a href="mailto:romina.mirmehdi@gmail.com" aria-label="Email">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 4h16v16H4V4zm16 0-8 8-8-8" />
+              </svg>
+              <span>Email</span>
+            </a>
+      
+            <a href="https://www.linkedin.com/in/romina-mirmehdi-a37603366/" target="_blank" aria-label="LinkedIn">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-4 0v6h-4v-6a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+      
+            <a href="https://gitlab.bht-berlin.de/s87619" target="_blank" aria-label="GitLab">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12l-2.47-7.6a.39.39 0 00-.74-.02L17.05 9H6.95L5.2 4.38a.39.39 0 00-.74.02L2 12l10 8 10-8z"/>
+              </svg>
+              <span>GitLab</span>
+            </a>
+          </div>
+        </div>
+      </footer>
+      
+
+    <script src="../theme-toggle.js" defer></script>
+
+  </body>
+</html>

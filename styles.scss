@@ -1,3 +1,4 @@
+
 // --------------------------------------------
 // Color Theme Variables using CSS Custom Properties
 // --------------------------------------------
@@ -9,7 +10,7 @@
   --color-mid: #cccccc;
   --color-light: #0d1b2a;
   --color-lighter: #1b263b;
-  --font-body: sans-serif;
+  --font-body: 'Lexend', sans-serif;
 }
 
 // Dark Mode Overrides
@@ -30,6 +31,8 @@ body {
   font-size: 1.125rem;
   font-family: var(--font-body);
   line-height: 1.75;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
   padding: 0 1rem;
   margin: 0;
 }
@@ -278,6 +281,9 @@ nav {
 // Main, Typography, and Layout
 // --------------------------------------------
 main {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 60ch; 
   padding: 2rem 1rem;
   max-width: 45rem;
   margin: 0 auto;

@@ -67,3 +67,64 @@
     }
   }
   
+/* für bilder */  
+.project-images {
+  display: flex;
+  gap: 1rem;
+
+  .gallery-item {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+
+    img {
+      max-width: 200px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+
+  &.active {
+    display: flex;
+  }
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .close, .prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+    &:focus {
+      outline: 2px solid yellow;
+    }
+  }
+
+  .close { top: 2rem; right: 2rem; transform: none; }
+  .prev { left: 2rem; }
+  .next { right: 2rem; }
+}

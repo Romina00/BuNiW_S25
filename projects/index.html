@@ -143,10 +143,29 @@
           the thinking behind design systems, component layout, and navigation
           logic.
         </p>
+
         <div class="project-images">
-          <img src="../images/portfolio1.jpg" alt="Portfolio 1" />
-          <img src="../images/portfolio2.jpg" alt="Portfolio 2" />
-          <img src="../images/portfolio3.jpg" alt="Portfolio 3" />
+          <button
+            class="gallery-item"
+            aria-label="Bild 1 vergrößern"
+            data-full="../images/portfolio1.jpg"
+          >
+            <img src="../images/portfolio1.jpg" alt="Portfolio Screenshot 1" />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="Bild 2 vergrößern"
+            data-full="../images/portfolio2.jpg"
+          >
+            <img src="../images/portfolio2.jpg" alt="Portfolio Screenshot 2" />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="Bild 3 vergrößern"
+            data-full="../images/portfolio3.jpg"
+          >
+            <img src="../images/portfolio3.jpg" alt="Portfolio Screenshot 3" />
+          </button>
         </div>
       </section>
 
@@ -168,9 +187,36 @@
           journey into a personal adventure.
         </p>
         <div class="project-images">
-          <img src="./../images/hiddenGems1.jpg" alt="HiddenGems 1" />
-          <img src="./../images/hiddenGems2.jpg" alt="HiddenGems 2" />
-          <img src="./../images/hiddenGems3.jpg" alt="HiddenGems 3" />
+          <button
+            class="gallery-item"
+            aria-label="HiddenGems Bild 1 vergrößern"
+            data-full="./../images/hiddenGems1.jpg"
+          >
+            <img
+              src="./../images/hiddenGems1.jpg"
+              alt="HiddenGems Screenshot 1"
+            />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="HiddenGems Bild 2 vergrößern"
+            data-full="./../images/hiddenGems2.jpg"
+          >
+            <img
+              src="./../images/hiddenGems2.jpg"
+              alt="HiddenGems Screenshot 2"
+            />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="HiddenGems Bild 3 vergrößern"
+            data-full="./../images/hiddenGems3.jpg"
+          >
+            <img
+              src="./../images/hiddenGems3.jpg"
+              alt="HiddenGems Screenshot 3"
+            />
+          </button>
         </div>
       </section>
 
@@ -190,11 +236,45 @@
           testing, and frontend deployment on platforms like Vercel and Netlify.
         </p>
         <div class="project-images">
-          <img src="./../images/modernWeb1.jpg" alt="Modern App 1" />
-          <img src="./../images/modernWeb2.jpg" alt="Modern App 2" />
-          <img src="./../images/modernWeb3.jpg" alt="Modern App 3" />
+          <button
+            class="gallery-item"
+            aria-label="Modern Web App Bild 1 vergrößern"
+            data-full="./../images/modernWeb1.jpg"
+          >
+            <img
+              src="./../images/modernWeb1.jpg"
+              alt="Modern Web Screenshot 1"
+            />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="Modern Web App Bild 2 vergrößern"
+            data-full="./../images/modernWeb2.jpg"
+          >
+            <img
+              src="./../images/modernWeb2.jpg"
+              alt="Modern Web Screenshot 2"
+            />
+          </button>
+          <button
+            class="gallery-item"
+            aria-label="Modern Web App Bild 3 vergrößern"
+            data-full="./../images/modernWeb3.jpg"
+          >
+            <img
+              src="./../images/modernWeb3.jpg"
+              alt="Modern Web Screenshot 3"
+            />
+          </button>
         </div>
       </section>
+
+      <div class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <button class="close" aria-label="Schließen">×</button>
+        <button class="prev" aria-label="Vorheriges Bild">‹</button>
+        <img class="lightbox-image" src="" alt="" />
+        <button class="next" aria-label="Nächstes Bild">›</button>
+      </div>
     </main>
 
     <footer class="footer">

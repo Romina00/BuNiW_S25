@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .projects {
   max-width: 960px;
   margin: 0 auto;
@@ -55,6 +56,68 @@
   .projects h1 {
     font-size: 2rem;
   }
+}
+
+/* für bilder */
+.project-images {
+  display: flex;
+  gap: 1rem;
+}
+.project-images .gallery-item {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+.project-images .gallery-item img {
+  max-width: 200px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.project-images .gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.lightbox.active {
+  display: flex;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+.lightbox .close, .lightbox .prev, .lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.lightbox .close:focus, .lightbox .prev:focus, .lightbox .next:focus {
+  outline: 2px solid yellow;
+}
+.lightbox .close {
+  top: 2rem;
+  right: 2rem;
+  transform: none;
+}
+.lightbox .prev {
+  left: 2rem;
+}
+.lightbox .next {
+  right: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

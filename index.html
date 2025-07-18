@@ -64,16 +64,36 @@
       defer
     ></script>
 
-    <!-- Dadurch lädt der Browser automatisch die barrierefreundliche Schriftart. -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Schriftart einbinden -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      function setDirectionBasedOnLanguage() {
+        const rtlLanguages = ["fa", "ar", "he", "ur"];
+
+        const observer = new MutationObserver(() => {
+          const htmlTag = document.documentElement;
+          const currentLang = htmlTag.getAttribute("lang");
+
+          if (!currentLang) return;
+
+          const langCode = currentLang.split("-")[0];
+
+          if (rtlLanguages.includes(langCode)) {
+            htmlTag.setAttribute("dir", "rtl");
+          } else {
+            htmlTag.setAttribute("dir", "ltr");
+          }
+        });
+
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["lang"],
+        });
+      }
+
+      // Wait for Google Translate to initialize
+      window.addEventListener("load", function () {
+        setDirectionBasedOnLanguage();
+      });
+    </script>
   </head>
   <body>
     <header>

@@ -1,5 +1,7 @@
 const toggle = document.getElementById("theme-toggle");
-const currentTheme = localStorage.getItem("theme");
+let currentTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+  ? "dark"
+  : "light";
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);

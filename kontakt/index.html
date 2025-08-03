@@ -86,7 +86,6 @@
                   <path d="m19.07 4.93-1.41 1.41" />
                 </svg>
               </span>
-
               <span class="icon moon">
                 <!-- Moon SVG -->
                 <svg
@@ -106,31 +105,21 @@
               </span>
             </span>
           </label>
+          <button
+            class="nav-toggle"
+            aria-label="Toggle menu"
+            onclick="document.querySelector('nav').classList.toggle('nav-open')"
+          >
+            ☰
+          </button>
         </div>
-        <button
-          class="nav-toggle"
-          aria-label="Toggle menu"
-          onclick="document.querySelector('nav').classList.toggle('nav-open')"
-        >
-          ☰
-        </button>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../about/index.html">About Me</a></li>
-          <li><a href="../projects/index.html">Projects</a></li>
-          <li><a href="index.html" aria-current="page">Contact</a></li>
+          <li><a href="./../index.html" >Home</a></li>
+          <li><a href="./../about/index.html">About Me</a></li>
+          <li><a href="./../projects/index.html">Projects</a></li>
+          <li><a href="./index.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
-      <!-- Dadurch lädt der Browser automatisch die barrierefreundliche Schriftart. -->
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
-        rel="stylesheet"
-      />
-      <!-- Schriftart einbinden -->
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lexend&display=swap"
-        rel="stylesheet"
-      />
     </header>
 
     <main id="inhalt" class="contact">

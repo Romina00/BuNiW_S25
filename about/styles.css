@@ -2,40 +2,162 @@
   max-width: 960px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  /* Fancy keyframes */
+  /* Hero/intro section */
+  /* Grid for skills and education */
+  /* Skills card */
+  /* Education card with timeline */
+  /* Stack cards on narrow screens */
+}
+@keyframes fancyEnterLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.95) rotate(-3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(10px) scale(1.05) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+@keyframes fancyEnterRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95) rotate(3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-10px) scale(1.05) rotate(-1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+}
+@keyframes pillAppear {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 .cv .intro {
-  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  margin-bottom: 3rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--color-darkest), var(--color-dark));
+  color: var(--color-light);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  animation: fancyEnterLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .cv .intro h1 {
-  color: var(--color-light);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 .cv .intro p {
   margin-bottom: 1rem;
 }
 .cv .cv-columns {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  justify-content: space-between;
 }
-.cv .cv-columns .skills,
-.cv .cv-columns .education {
-  flex: 1;
+.cv .skills {
+  background-color: var(--color-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fancyEnterLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.cv .skills h2 {
+  margin-bottom: 1rem;
+  color: var(--color-light);
 }
 .cv .skills ul {
-  list-style: disc inside;
-  padding-left: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.cv .skills li {
+  background-color: var(--color-mid);
+  color: var(--color-light);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.875rem;
+  animation: pillAppear 0.8s ease both;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.cv .skills li:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+.cv .education {
+  background-color: var(--color-dark);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fancyEnterRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.cv .education h2 {
+  margin-bottom: 1rem;
+  color: var(--color-light);
+}
+.cv .education .edu-entry {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  /* timeline dot */
+  /* timeline line */
 }
 .cv .education .edu-entry h3 {
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.25rem;
   color: var(--color-light);
 }
 .cv .education .edu-entry p {
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
+}
+.cv .education .edu-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-light);
+  border-radius: 50%;
+}
+.cv .education .edu-entry::after {
+  content: "";
+  position: absolute;
+  left: 3.5px;
+  top: 1rem;
+  bottom: -1rem;
+  width: 1px;
+  background-color: var(--color-mid);
+}
+.cv .education .edu-entry:last-child::after {
+  display: none;
 }
 @media (max-width: 768px) {
   .cv .cv-columns {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 }
 

@@ -4,7 +4,9 @@
   --color-mid: #cccccc;
   --color-light: #0d1b2a;
   --color-lighter: #1b263b;
-  --font-body: "system-ui", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-body: "system-ui", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 [data-theme=dark] {
@@ -23,10 +25,9 @@ body {
   line-height: 1.75;
   letter-spacing: 0.02em;
   word-spacing: 0.05em;
-  padding: 0 1rem;
   margin: 0;
+  padding: 0;
   letter-spacing: 1.5px;
-
 }
 
 header {
@@ -40,16 +41,22 @@ nav {
   position: relative;
 }
 
+/* nav-toggle stays in the grid but is hidden on large screens */
 nav .nav-toggle {
-  display: none;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   color: var(--color-lighter);
   font-size: 2rem;
   cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+  position: static;
+  justify-self: end;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 nav ul {
@@ -69,7 +76,8 @@ nav ul li a {
   padding: 0.5rem 1rem;
 }
 
-nav ul li a:hover, nav ul li a:focus {
+nav ul li a:hover,
+nav ul li a:focus {
   background-color: var(--color-mid);
   color: var(--color-light);
   outline: 2px solid var(--color-light);
@@ -80,17 +88,39 @@ nav ul li a[aria-current=page] {
   border-bottom: 2px solid var(--color-light);
 }
 
+/* Use grid by default. The center column holds the theme switch. */
 nav .nav-bar {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 0 1rem;
+}
+
+/* Switch to flex on large screens to align the theme switch to the right */
+@media (min-width: 769px) {
+  nav .nav-bar {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  /* Push the theme switch to the far right; override small-screen centering. */
+  .theme-switch {
+    margin-left: auto !important;
+    justify-self: unset !important;
+  }
+  /* Hide the hamburger button on large screens */
+  nav .nav-toggle {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 nav .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--color-lighter);
+  justify-self: start;
 }
 
 nav .theme-toggle {
@@ -102,12 +132,14 @@ nav .theme-toggle {
   transition: transform 0.2s ease;
 }
 
-nav .theme-toggle:hover, nav .theme-toggle:focus {
+nav .theme-toggle:hover,
+nav .theme-toggle:focus {
   color: var(--color-light);
   transform: rotate(20deg);
   outline: none;
 }
 
+/* Base theme switch styling; centering is added in small-screen media query */
 .theme-switch {
   position: relative;
   display: inline-block;
@@ -206,7 +238,7 @@ nav .theme-toggle:hover, nav .theme-toggle:focus {
 }
 
 .footer .footer-content .footer-links {
-  margin-top: 1.5rem;
+  margin: 1.5rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -235,6 +267,7 @@ nav .theme-toggle:hover, nav .theme-toggle:focus {
   stroke: none;
 }
 
+/* Responsive layout for screens 768px and under */
 @media (max-width: 768px) {
   nav ul {
     display: none;
@@ -253,21 +286,61 @@ nav .theme-toggle:hover, nav .theme-toggle:focus {
   nav.nav-open ul {
     display: flex;
   }
-  .nav-toggle {
-    display: block;
+  /* Show the hamburger button and make it interactive */
+  nav .nav-toggle {
+    visibility: visible;
+    pointer-events: auto;
+    font-size: 1.5rem;
+  }
+  /* Center the theme switch in the grid on small screens */
+  .theme-switch {
+    justify-self: center;
+    margin-left: 0;
   }
 }
+
 main {
   font-size: 1.125rem;
   line-height: 1.75;
   max-width: 60ch;
   padding: 2rem 1rem;
-  max-width: 45rem;
   margin: 0 auto;
   background-color: var(--color-darkest);
 }
 
-h1, h2, h3 {
+/* Very small screen tweaks */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.3;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  nav ul li a {
+    padding: 0.75rem 1rem;
+  }
+  .footer .footer-content .footer-links {
+     margin-top: 1.5rem;
+  margin-bottom: 2rem; // added for extra space underneath the links
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  }
+  .footer .footer-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+h1,
+h2,
+h3 {
   color: var(--color-light);
   font-weight: bold;
 }
@@ -277,13 +350,10 @@ a {
   text-decoration: underline;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: var(--color-lighter);
   background-color: var(--color-mid);
   outline: 2px solid var(--color-lighter);
   outline-offset: 2px;
 }
-
-
-
-/*# sourceMappingURL=styles.scss.map */
